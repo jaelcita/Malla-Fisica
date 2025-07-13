@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Interactiva - Física UIS</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #fff0f5; margin:20px; }
+    h1 { text-align:center; color:#c71585; }
+    .semestre { margin: 10px 0; border:1px solid #f4c2c2; border-radius:5px; background:#ffe4e1; }
+    .semestre-header {
+      padding:10px;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:bold;
+      color:#900C3F;
+    }
+    .contenido { display:none; padding:0 10px 10px; }
+    table {width:100%; border-collapse:collapse; margin-top:10px;}
+    th, td { border:1px solid #f4c2c2; padding:8px; text-align:left; }
+    th { background:#ffc0cb; }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva – Física UIS</h1>
+
+  <!-- Bloque Semestre -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Primer Semestre</div>
+    <div class="contenido">
+      <table>
+        <tr><th>Materia</th><th>Prerrequisitos</th></tr>
+        <tr><td>Fundamentos de Matemáticas</td><td>—</td></tr>
+        <tr><td>Cálculo Diferencial</td><td>—</td></tr>
+        <tr><td>Álgebra Lineal</td><td>—</td></tr>
+        <tr><td>Física Mecánica</td><td>—</td></tr>
+        <tr><td>Laboratorio de Mecánica</td><td>—</td></tr>
+        <tr><td>Competencias Comunicativas</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Repite este bloque por cada semestre -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Segundo Semestre</div>
+    <div class="contenido">
+      <table>
+        <tr><th>Materia</th><th>Prerrequisitos</th></tr>
+        <tr><td>Cálculo Integral</td><td>Cálculo Diferencial</td></tr>
+        <tr><td>Geometría Vectorial</td><td>Álgebra Lineal</td></tr>
+        <tr><td>Física Ondulatoria y Termodinámica</td><td>Física Mecánica</td></tr>
+        <tr><td>Laboratorio de Ondas y Termodinámica</td><td>Laboratorio de Mecánica</td></tr>
+        <tr><td>Inglés I</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tercer Semestre -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Tercer Semestre</div>
+    <div class="contenido">
+      <table>
+        <tr><th>Materia</th><th>Prerrequisitos</th></tr>
+        <tr><td>Cálculo Vectorial</td><td>Cálculo Integral</td></tr>
+        <tr><td>Física Electromagnética</td><td>Física Ondulatoria y Termodinámica</td></tr>
+        <tr><td>Laboratorio de Electromagnetismo</td><td>Laboratorio de Ondas y Termodinámica</td></tr>
+        <tr><td>Ecuaciones Diferenciales</td><td>Cálculo Integral y Álgebra Lineal</td></tr>
+        <tr><td>Inglés II</td><td>Inglés I</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Cuarto Semestre -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Cuarto Semestre</div>
+    <div class="contenido">
+      <table>
+        <tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Mecánica Analítica</td><td>Física Mecánica, Cálculo Vectorial</td></tr>
+        <tr><td>Métodos Matemáticos I</td><td>Ecuaciones Diferenciales</td></tr>
+        <tr><td>Fundamentos de Electrónica</td><td>—</td></tr>
+        <tr><td>Laboratorio de Electrónica</td><td>—</td></tr>
+        <tr><td>Inglés III</td><td>Inglés II</td></tr>
+        <tr><td>Formación Sociohumanística I</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Quinto -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Quinto Semestre</div>
+    <div class="contenido">
+      <table><tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Mecánica Cuántica I</td><td>Mecánica Analítica, Métodos Matemáticos I</td></tr>
+        <tr><td>Métodos Matemáticos II</td><td>Métodos Matemáticos I</td></tr>
+        <tr><td>Física Moderna</td><td>—</td></tr>
+        <tr><td>Laboratorio de Física Moderna</td><td>—</td></tr>
+        <tr><td>Inglés IV</td><td>Inglés III</td></tr>
+        <tr><td>Formación Sociohumanística II</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sexto -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Sexto Semestre</div>
+    <div class="contenido">
+      <table><tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Mecánica Cuántica II</td><td>Mecánica Cuántica I</td></tr>
+        <tr><td>Física Estadística</td><td>Física Moderna, Métodos Matemáticos II</td></tr>
+        <tr><td>Óptica</td><td>—</td></tr>
+        <tr><td>Laboratorio de Óptica</td><td>—</td></tr>
+        <tr><td>Electiva Profesional I</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Séptimo -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Séptimo Semestre</div>
+    <div class="contenido">
+      <table><tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Electrodinámica</td><td>Física Electromagnética, Métodos Matemáticos II</td></tr>
+        <tr><td>Física del Estado Sólido</td><td>—</td></tr>
+        <tr><td>Seminario de Investigación I</td><td>—</td></tr>
+        <tr><td>Proyecto de Investigación I</td><td>—</td></tr>
+        <tr><td>Electiva Profesional II</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Octavo -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Octavo Semestre</div>
+    <div class="contenido">
+      <table><tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Relatividad y Cosmología</td><td>Mecánica Cuántica II, Física Moderna</td></tr>
+        <tr><td>Física Nuclear</td><td>Mecánica Cuántica II</td></tr>
+        <tr><td>Seminario de Investigación II</td><td>Seminario de Investigación I</td></tr>
+        <tr><td>Proyecto de Investigación II</td><td>Proyecto de Investigación I</td></tr>
+        <tr><td>Electiva Profesional III</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Noveno -->
+  <div class="semestre">
+    <div class="semestre-header" onclick="toggle(this)">📚 Noveno Semestre</div>
+    <div class="contenido">
+      <table><tr><th>Materia</th><th>Prerrequisitos</th></r>
+        <tr><td>Trabajo de Grado</td><td>Proyecto de Investigación II</td></tr>
+        <tr><td>Electiva Profesional IV</td><td>—</td></tr>
+        <tr><td>Electiva Profesional V</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function toggle(el) {
+      const content = el.nextElementSibling;
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
