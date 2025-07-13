@@ -56,68 +56,66 @@
 </head>
 <body>
   <h1>Malla Interactiva – Física UIS</h1>
-
   <div id="contenedor-materias"></div>
 
   <script>
     const materias = [
-      // [Semestre, ID, Nombre, Créditos, Prerrequisitos]
-      [1, 'fund-cal', 'Fundamentos de Calculo Diferencial', 6, []],
+      [1, 'fund-cal', 'Fundamentos de Cálculo Diferencial', 6, []],
       [1, 'alg-lineal1', 'Álgebra Lineal 1', 4, []],
-      [1, 'int-fis', 'Introduccion a la Fisica', 2, []],
-      [1, 'hc-fis', 'Introduccion a las Herramientas Computacionales de la Fisca', 1, []],
-      [1, 'catedra', 'Catedra UIS', 1, []],
-      [1, 'cult-fis', 'Cultura Fisica y Deportiva', 1, []],
-      [1, 'ingles1', 'Ingles 1', 4, []],
+      [1, 'int-fis', 'Introducción a la Física', 2, []],
+      [1, 'hc-fis', 'Introducción a las Herramientas Computacionales de la Física', 1, []],
+      [1, 'catedra', 'Cátedra UIS', 1, []],
+      [1, 'cult-fis', 'Cultura Física y Deportiva', 1, []],
+      [1, 'ingles1', 'Inglés 1', 4, []],
 
       [2, 'calculo2', 'Cálculo 2', 4, ['fund-cal']],
-      [2, 'alg-lineal2', 'Algebra Lineral 2', 4, ['alg-lineal1']],
-      [2, 'fisica1', 'Física 1', 3, ['int-fis','fund-cal']],
-      [2, 'lect-tau', 'Lectura de Textos Academicos Universitarios', 3, []],
+      [2, 'alg-lineal2', 'Álgebra Lineal 2', 4, ['alg-lineal1']],
+      [2, 'fisica1', 'Física 1', 3, ['int-fis', 'fund-cal']],
+      [2, 'lect-tau', 'Lectura de Textos Académicos Universitarios', 3, []],
       [2, 'ingles2', 'Inglés 2', 4, ['ingles1']],
 
       [3, 'calculo3', 'Cálculo 3', 4, ['calculo2']],
-      [3, 'fisica2', 'Física 2', 3, ['fisica1','calculo2']],
+      [3, 'fisica2', 'Física 2', 3, ['fisica1', 'calculo2']],
       [3, 'fisica3', 'Física 3', 3, ['fisica1']],
-      [3, 'lab-fis1', 'Laboratorio de Fisica 1', 2, ['fisica1']],
-      [3, 'quimica', 'Quimica', 4, []],
+      [3, 'lab-fis1', 'Laboratorio de Física 1', 2, ['fisica1']],
+      [3, 'quimica', 'Química', 4, []],
 
       [4, 'ecu-dif', 'Ecuaciones Diferenciales', 4, ['calculo3']],
-      [4, 'met-mat1', 'Métodos Matemáticos para Fisicos 1', 3, ['alg-lineal2']],
-      [4, 'fisica4', 'Fisica 4', 3, ['calculo3','fisica3']],
-      [4, 'lab-fis2', 'Laboratorio de Fisica 2', 2, ['fisica3']],
+      [4, 'met-mat1', 'Métodos Matemáticos para Físicos 1', 3, ['alg-lineal2']],
+      [4, 'fisica4', 'Física 4', 3, ['calculo3', 'fisica3']],
+      [4, 'lab-fis2', 'Laboratorio de Física 2', 2, ['fisica3']],
       [4, 'aacar', 'Algoritmos y Arquitecturas Computacionales de Alto Rendimiento', 3, []],
-      [4, 'cons-pol', 'Constitucion Politica', 2, []],
+      [4, 'cons-pol', 'Constitución Política', 2, []],
 
-      [5, 'mec-clas', 'Mecánica Clasica', 5, ['ecu-dif']],
-      [5, 'met-mat2', 'Métodos Matemáticos para Fisicos 2', 3, ['met-mat1']],
-      [5, 'fis-cont', 'Topicos en Física Contemporanea', 3, ['fisica4']],
+      [5, 'mec-clas', 'Mecánica Clásica', 5, ['ecu-dif']],
+      [5, 'met-mat2', 'Métodos Matemáticos para Físicos 2', 3, ['met-mat1']],
+      [5, 'fis-cont', 'Tópicos en Física Contemporánea', 3, ['fisica4']],
       [5, 'lab-moderna', 'Laboratorio de Física 3', 2, ['fisica4']],
-      [5, 'ingles4', 'Biologia General', 4, []],
+      [5, 'biologia', 'Biología General', 4, []],
 
       [6, 'mec-cuant', 'Mecánica Cuántica', 5, ['mec-clas', 'met-mat2']],
-      [6, 'termo', 'Termodinamica', 3, []],
-      [6, 'teo-electro', 'Teoria Electromagnetica', 5, ['fis-cont', 'ecu-dif']],
+      [6, 'termo', 'Termodinámica', 3, []],
+      [6, 'teo-electro', 'Teoría Electromagnética', 5, ['fis-cont', 'ecu-dif']],
       [6, 'dis-exp', 'Diseño de Experimentos', 1, []],
-      [6, 'acpf', 'Aplicaciones Computacionales a Problemas Fisicos', 3, ['aacar']],
+      [6, 'acpf', 'Aplicaciones Computacionales a Problemas Físicos', 3, ['aacar']],
 
       [7, 'rel-espec', 'Relatividad Especial', 3, ['teo-electro']],
-      [7, 'fis-est', 'Física Estadistica', 3, ['termo']],
-      [7, 'teo-luz', 'Teoria de la Luz', 3, ['teo-electro']],
-      [7, 'inst-elec', 'Instrumentacion Electronica', 2, ['dis-exp']],
-      [7, 'ret-cien', 'Retos Cientificos', 1, []],
-      [7, 'eti-ciu', 'Etica Ciudadana', 3, []],
+      [7, 'fis-est', 'Física Estadística', 3, ['termo']],
+      [7, 'teo-luz', 'Teoría de la Luz', 3, ['teo-electro']],
+      [7, 'inst-elec', 'Instrumentación Electrónica', 2, ['dis-exp']],
+      [7, 'ret-cien', 'Retos Científicos', 1, []],
+      [7, 'eti-ciu', 'Ética Ciudadana', 3, []],
       [7, 'contexto1', 'Contexto 1', 3, []],
 
-      [8, 'estado-solido', 'Estado Solido', 3, ['fis-est']],
-      [8, 'fis-ato', 'Física Atomica y Subatomica', 3, ['mec-cuant']],
+      [8, 'estado-solido', 'Estado Sólido', 3, ['fis-est']],
+      [8, 'fis-ato', 'Física Atómica y Subatómica', 3, ['mec-cuant']],
       [8, 'lab-avanzado1', 'Laboratorio Avanzado 1', 2, ['inst-elec']],
       [8, 'trabajo1', 'Trabajo de Grado 1', 3, []],
       [8, 'electiva1', 'Electiva Profesional 1', 3, []],
       [8, 'contexto2', 'Contexto 2', 3, []],
 
       [9, 'trabajo2', 'Trabajo de Grado 2', 5, ['trabajo1']],
-      [9, 'electiva2', 'Electiva Profesional 3', 2, []],
+      [9, 'electiva2', 'Electiva Profesional 2', 2, []],
       [9, 'electiva3', 'Electiva Profesional 3', 2, []],
       [9, 'lab-avanzado2', 'Laboratorio Avanzado 2', 2, ['lab-avanzado1']]
     ];
